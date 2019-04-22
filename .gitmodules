@@ -1,0 +1,6 @@
+[submodule "Detectron"]
+	path = Detectron
+	url = https://github.com/TrySickle/Detectron.git
+[submodule "VideoPose3D"]
+	path = VideoPose3D
+	url = https://github.com/TrySickle/VideoPose3D.git
