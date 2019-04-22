@@ -7,6 +7,9 @@ Detectron: Ross Girshick, Ilija Radosavovic, Georgia Gkioxari, Piotr Dollár and
 Based on the fork of VideoPose3D [here](https://github.com/tobiascz/VideoPose3D)
 
 ## Installation
+### Cloning this Repo
+A standard git clone will not clone the submodules, so do this command instead
+- git clone --recurse-submodules -j8 https://github.com/TrySickle/3d-pose-estimation.git
 ### Detectron
 - NVIDIA GPU, Linux, Python2
 - Caffe2, pip for installing packages, COCO API
