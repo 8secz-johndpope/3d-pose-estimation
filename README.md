@@ -51,6 +51,7 @@ Follow instructions below if you want to use this notebook (maybe you are on Win
 - Open an issue on Github or message jlee3331@gatech.edu
 - Check internal parameters in run.py (the script calls other scripts with command line args that can be modified)
 - Check all installations are working
+- See notes here for more information: [docs](https://docs.google.com/document/d/1HnCmgazM-wYZgQT9KNiNPrr6TwCIj0hpSdAWVHlGQhM/edit?usp=sharing)
 
 ## Colab
 Using colab requires you to download the video, split the frames, download the detectron model, and upload to drive  
