@@ -10,12 +10,16 @@ Based on the fork of VideoPose3D [here](https://github.com/tobiascz/VideoPose3D)
 ### Cloning this Repo
 A standard git clone will not clone the submodules, so do this command instead
 - git clone --recurse-submodules -j8 https://github.com/TrySickle/3d-pose-estimation.git
+
 ### Detectron
 - NVIDIA GPU, Linux, Python2
 - Caffe2, pip for installing packages, COCO API
 - CUDA 8.0, cuDNN 6.0.21
 
 Refer to the Detectron repo's instructions [here](https://github.com/facebookresearch/Detectron/blob/master/INSTALL.md)
+
+For easy use of Detectron, try this [colab notebook](https://colab.research.google.com/drive/1F3dwAGV8Igin1-_RuuNLfG00hrPJ_k-i)  
+Follow instructions below if you want to use this notebook (maybe you are on Windows)  
 
 ### VideoPose3D
 - Python3+
@@ -47,3 +51,18 @@ Refer to the Detectron repo's instructions [here](https://github.com/facebookres
 - Open an issue on Github or message jlee3331@gatech.edu
 - Check internal parameters in run.py (the script calls other scripts with command line args that can be modified)
 - Check all installations are working
+
+## Colab
+Using colab requires you to download the video, split the frames, download the detectron model, and upload to drive  
+1. Download youtube video, rename it something to identify it with, like golf.mp4, skating.mp4, etc
+2. Create empty folder called frames to store output frames
+3. Split into frames using ffmpeg -i video_name.mp4 -r 25/1 frames/output%04d.png
+4. Download this model: [Download](https://www.dropbox.com/sh/vi5byf0du9g50lw/AABGVezeuHuipOzaFGdGGvbaa?dl=0&preview=model_final.pkl)
+5. Make a folder called detectron_assets in your drive
+6. Upload the frames folder, model_final.pkl, and infer_simple.py (found in Detectron/tools) to detectron_assets
+7. Run the notebook, make sure to change the video name in the Detectron cell
+8. Download the data_2d_detections_name file to the data folder of VideoPose3D
+9. Copy the video to InTheWildData
+10. python3 run_wild.py -k detections_golf -arc 3,3,3,3,3 -c checkpoint --evaluate d-pt-243.bin --render --viz-subject S1 --viz-action Directions --viz-video InTheWildData/golf.mp4 --viz-camera 0 --viz-output output_golf.mp4 --viz-size 5 --viz-downsample 1 --viz-skip 0
+11. Change golf to whatever is appropriate
+12. Outputs in outputs folder and in root
